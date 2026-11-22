@@ -1,0 +1,359 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="فرست مارت للمواد الغذائية - تسوق المنتجات الغذائية والمشروبات والحلويات والمستلزمات اليومية">
+<title>FIRST MART | فرست مارت</title>
+<style>
+:root {
+  --red:#ed2929;
+  --green:#12b978;
+  --dark:#15191d;
+  --light:#f6f7f8;
+  --white:#fff;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+ font-family:Tahoma,Arial,sans-serif;
+ background:var(--light);
+ color:#242424;
+ line-height:1.8;
+}
+a{text-decoration:none;color:inherit}
+header{
+ background:var(--dark);
+ color:white;
+ position:sticky;top:0;z-index:100;
+ border-bottom:3px solid var(--red);
+}
+.topbar{
+ background:#0d1013;padding:7px 5%;
+ font-size:13px;color:#ddd;
+ display:flex;justify-content:space-between;
+ flex-wrap:wrap;gap:8px;
+}
+.navbar{
+ padding:13px 5%;display:flex;
+ justify-content:space-between;align-items:center;
+ gap:20px;flex-wrap:wrap;
+}
+.logo{font-size:27px;font-weight:bold;color:var(--green)}
+.logo span{color:var(--red)}
+nav{display:flex;gap:14px;flex-wrap:wrap}
+nav a{font-size:13px;color:#eee;cursor:pointer}
+nav a:hover{color:var(--green)}
+.hero{
+ min-height:480px;
+ background:linear-gradient(90deg,#000b,#0005),
+ url('images/store-front.jpg') center/cover;
+ display:flex;align-items:center;
+ padding:60px 8%;color:white;
+}
+.hero-content{max-width:650px}
+.hero h1{font-size:48px;line-height:1.4}
+.hero h1 span{color:var(--green)}
+.hero p{font-size:19px;margin:18px 0 25px}
+.btn{
+ display:inline-block;padding:12px 27px;
+ border-radius:6px;font-weight:bold;
+ background:var(--red);color:white;
+ border:0;cursor:pointer;margin:5px;
+}
+.btn.green{background:var(--green)}
+.container{width:90%;max-width:1200px;margin:auto}
+section{padding:65px 0}
+.section-title{text-align:center;margin-bottom:35px}
+.section-title h2{font-size:30px;color:var(--dark)}
+.section-title h2 span{color:var(--red)}
+.section-title p{color:#777}
+.cards{
+ display:grid;
+ grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+ gap:20px;
+}
+.card{
+ background:white;border-radius:12px;
+ overflow:hidden;box-shadow:0 4px 18px #0000000c;
+ transition:.3s;
+}
+.card:hover{transform:translateY(-5px)}
+.card img{width:100%;height:190px;object-fit:cover}
+.card-content{padding:18px}
+.card h3{margin-bottom:8px}
+.card p{color:#777;font-size:14px}
+.about{
+ display:grid;grid-template-columns:1fr 1fr;
+ align-items:center;gap:35px;
+}
+.about img{width:100%;border-radius:12px}
+.stats{
+ display:grid;grid-template-columns:repeat(3,1fr);
+ gap:15px;margin-top:25px;
+}
+.stat{background:#fff;padding:20px;text-align:center;border-radius:10px}
+.stat strong{font-size:25px;color:var(--green)}
+.banner{
+ background:var(--dark);color:white;
+ text-align:center;padding:50px 20px;
+}
+.banner h2{font-size:30px}
+.page{display:none;min-height:65vh}
+.page.active{display:block}
+.page-hero{
+ background:linear-gradient(90deg,#101820e8,#10182088),
+ url('images/store-interior.jpg') center/cover;
+ padding:65px 5%;color:white;text-align:center;
+}
+.page-hero h1{font-size:35px}
+.content{padding:45px 5%;max-width:1200px;margin:auto}
+.content h2{margin-bottom:15px}
+.content p{margin-bottom:15px;color:#666}
+.gallery{
+ display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+ gap:15px;
+}
+.gallery img{width:100%;height:240px;object-fit:cover;border-radius:10px}
+.faq-item{background:white;margin:12px 0;padding:20px;border-radius:9px}
+footer{background:#15191d;color:white;padding:45px 5% 15px}
+.footer-grid{
+ display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+ gap:30px;
+}
+footer h3{color:var(--green);margin-bottom:12px}
+footer p,footer a{color:#ccc;font-size:14px}
+.copyright{
+ border-top:1px solid #444;margin-top:30px;
+ padding-top:15px;text-align:center;color:#aaa;
+}
+.float-whatsapp{
+ position:fixed;bottom:22px;left:22px;
+ background:#20c765;color:white;
+ padding:13px 19px;border-radius:40px;
+ box-shadow:0 3px 15px #0003;z-index:200;
+ font-weight:bold;
+}
+.menu-toggle{display:none;background:var(--red);color:white;border:0;padding:9px 15px}
+@media(max-width:800px){
+ .navbar{align-items:flex-start}
+ .menu-toggle{display:block}
+ nav{display:none;width:100%;flex-direction:column}
+ nav.open{display:flex}
+ nav a{padding:7px;border-bottom:1px solid #333}
+ .hero{min-height:390px}
+ .hero h1{font-size:34px}
+ .about{grid-template-columns:1fr}
+ .stats{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<header>
+ <div class="topbar">
+  <span>📍 فرست مارت – خط الكورنيش</span>
+  <span>📞 0503721110 | frestmart123@gmail.com</span>
+ </div>
+ <div class="navbar">
+  <a class="logo" href="#" onclick="showPage('home')">FIRST <span>MART</span></a>
+  <button class="menu-toggle" onclick="toggleMenu()">☰ القائمة</button>
+  <nav id="nav">
+   <a onclick="showPage('home')">الرئيسية</a>
+   <a onclick="showPage('about')">من نحن</a>
+   <a onclick="showPage('categories')">الأقسام</a>
+   <a onclick="showPage('food')">المواد الغذائية</a>
+   <a onclick="showPage('drinks')">العصائر</a>
+   <a onclick="showPage('sweets')">الحلويات</a>
+   <a onclick="showPage('toys')">الألعاب</a>
+   <a onclick="showPage('offers')">العروض</a>
+   <a onclick="showPage('products')">المنتجات</a>
+   <a onclick="showPage('gallery')">معرض الصور</a>
+   <a onclick="showPage('faq')">الأسئلة الشائعة</a>
+   <a onclick="showPage('contact')">اتصل بنا</a>
+  </nav>
+ </div>
+</header>
+
+<!-- 1 الرئيسية -->
+<div id="home" class="page active">
+ <div class="hero">
+  <div class="hero-content">
+   <h1>مرحباً بكم في <span>FIRST MART</span></h1>
+   <p>كل احتياجاتكم اليومية في مكان واحد. جودة وتنوع وتجربة تسوق مميزة.</p>
+   <button class="btn" onclick="showPage('categories')">اكتشف أقسامنا</button>
+   <a class="btn green" href="https://wa.me/966503721110">تواصل معنا</a>
+  </div>
+ </div>
+ <section class="container">
+  <div class="section-title">
+   <h2>اكتشف <span>عالم فرست مارت</span></h2>
+   <p>تنوع من المنتجات لتلبية احتياجاتكم اليومية</p>
+  </div>
+  <div class="cards">
+   <div class="card"><img src="images/frozen.jpg"><div class="card-content"><h3>المجمدات</h3><p>تشكيلة متنوعة من المنتجات المجمدة.</p></div></div>
+   <div class="card"><img src="images/juice.jpg"><div class="card-content"><h3>العصائر والمشروبات</h3><p>خيارات متنوعة من المشروبات.</p></div></div>
+   <div class="card"><img src="images/sweets.jpg"><div class="card-content"><h3>الحلويات والسناكات</h3><p>حلويات ومأكولات خفيفة متنوعة.</p></div></div>
+   <div class="card"><img src="images/toys.jpg"><div class="card-content"><h3>الألعاب</h3><p>ألعاب ومنتجات متنوعة للأطفال.</p></div></div>
+  </div>
+ </section>
+ <div class="banner"><h2>FIRST MART – كل ما تحتاجه في مكان واحد</h2><p>نسعد بزيارتكم في فرست مارت – خط الكورنيش</p></div>
+</div>
+
+<!-- 2 من نحن -->
+<div id="about" class="page">
+ <div class="page-hero"><h1>من نحن</h1><p>تعرف على فرست مارت</p></div>
+ <div class="content about">
+  <div>
+   <h2>أهلاً بكم في <span style="color:var(--green)">FIRST MART</span></h2>
+   <p>فرست مارت متجر يقدم مجموعة متنوعة من المواد الغذائية والمنتجات الاستهلاكية والمشروبات والحلويات والألعاب.</p>
+   <p>نسعى إلى توفير تجربة تسوق مريحة من خلال تنوع الأقسام والمنتجات في مكان واحد.</p>
+   <a class="btn" href="https://wa.me/966503721110">تواصل معنا</a>
+  </div>
+  <img src="images/store-interior.jpg" alt="داخل فرست مارت">
+ </div>
+</div>
+
+<!-- 3 الأقسام -->
+<div id="categories" class="page">
+ <div class="page-hero"><h1>أقسام فرست مارت</h1></div>
+ <div class="content">
+  <div class="cards">
+   <div class="card"><img src="images/food.jpg"><div class="card-content"><h3>المواد الغذائية</h3><button class="btn" onclick="showPage('food')">اكتشف القسم</button></div></div>
+   <div class="card"><img src="images/juice.jpg"><div class="card-content"><h3>العصائر والمشروبات</h3><button class="btn" onclick="showPage('drinks')">اكتشف القسم</button></div></div>
+   <div class="card"><img src="images/sweets.jpg"><div class="card-content"><h3>الحلويات والسناكات</h3><button class="btn" onclick="showPage('sweets')">اكتشف القسم</button></div></div>
+   <div class="card"><img src="images/toys.jpg"><div class="card-content"><h3>الألعاب ومستلزمات الأطفال</h3><button class="btn" onclick="showPage('toys')">اكتشف القسم</button></div></div>
+  </div>
+ </div>
+</div>
+
+<!-- 4 المواد الغذائية -->
+<div id="food" class="page">
+ <div class="page-hero"><h1>المواد الغذائية والمجمدات</h1></div>
+ <div class="content">
+  <h2>احتياجاتكم الغذائية اليومية</h2>
+  <p>تعرفوا على تشكيلة المواد الغذائية والمنتجات المبردة والمجمدة المتوفرة في المتجر.</p>
+  <img src="images/frozen.jpg" style="width:100%;max-height:400px;object-fit:cover;border-radius:12px">
+ </div>
+</div>
+
+<!-- 5 العصائر -->
+<div id="drinks" class="page">
+ <div class="page-hero"><h1>العصائر والمشروبات</h1></div>
+ <div class="content">
+  <h2>خيارات متنوعة من المشروبات</h2>
+  <p>اكتشفوا تشكيلة العصائر والمشروبات في فرست مارت.</p>
+  <img src="images/juice.jpg" style="width:100%;max-height:400px;object-fit:cover;border-radius:12px">
+ </div>
+</div>
+
+<!-- 6 الحلويات -->
+<div id="sweets" class="page">
+ <div class="page-hero"><h1>الحلويات والسناكات</h1></div>
+ <div class="content">
+  <h2>عالم من النكهات</h2>
+  <p>تشكيلة متنوعة من الحلويات والشوكولاتة والمارشميلو والوجبات الخفيفة.</p>
+  <img src="images/sweets.jpg" style="width:100%;max-height:400px;object-fit:cover;border-radius:12px">
+ </div>
+</div>
+
+<!-- 7 الألعاب -->
+<div id="toys" class="page">
+ <div class="page-hero"><h1>الألعاب ومستلزمات الأطفال</h1></div>
+ <div class="content">
+  <h2>مساحة مليئة بالمرح</h2>
+  <p>اكتشفوا مجموعة الألعاب ومنتجات الأطفال والسكوترات المتوفرة في المتجر.</p>
+  <img src="images/toys.jpg" style="width:100%;max-height:400px;object-fit:cover;border-radius:12px">
+ </div>
+</div>
+
+<!-- 8 العروض -->
+<div id="offers" class="page">
+ <div class="page-hero"><h1>العروض والخصومات</h1></div>
+ <div class="content">
+  <h2>عروض فرست مارت</h2>
+  <p>تابعوا هذه الصفحة للاطلاع على العروض والخصومات التي يعلن عنها المتجر.</p>
+  <a class="btn green" href="https://wa.me/966503721110?text=السلام%20عليكم،%20أرغب%20بمعرفة%20العروض">اسأل عن العروض</a>
+ </div>
+</div>
+
+<!-- 9 المنتجات -->
+<div id="products" class="page">
+ <div class="page-hero"><h1>منتجاتنا</h1></div>
+ <div class="content">
+  <h2>منتجات متنوعة لجميع احتياجاتكم</h2>
+  <p>للاستفسار عن توفر منتج معين وأسعاره، تواصلوا مباشرة مع فريق فرست مارت.</p>
+  <a class="btn" href="https://wa.me/966503721110">استفسر عن منتج</a>
+ </div>
+</div>
+
+<!-- 10 معرض الصور -->
+<div id="gallery" class="page">
+ <div class="page-hero"><h1>معرض الصور</h1><p>جولة داخل فرست مارت</p></div>
+ <div class="content gallery">
+  <img src="images/store-front.jpg" alt="واجهة المتجر">
+  <img src="images/store-interior.jpg" alt="داخل المتجر">
+  <img src="images/juice.jpg" alt="قسم العصائر">
+  <img src="images/frozen.jpg" alt="قسم المجمدات">
+  <img src="images/sweets.jpg" alt="الحلويات">
+  <img src="images/toys.jpg" alt="الألعاب">
+ </div>
+</div>
+
+<!-- 11 الأسئلة -->
+<div id="faq" class="page">
+ <div class="page-hero"><h1>الأسئلة الشائعة</h1></div>
+ <div class="content">
+  <div class="faq-item"><h3>أين يقع فرست مارت؟</h3><p>فرع فرست مارت – خط الكورنيش.</p></div>
+  <div class="faq-item"><h3>كيف يمكن التواصل مع المتجر؟</h3><p>عبر الاتصال أو الواتساب على الرقم 0503721110.</p></div>
+  <div class="faq-item"><h3>كيف أستفسر عن منتج أو سعر؟</h3><p>يمكنك مراسلتنا مباشرة عبر واتساب.</p></div>
+  <div class="faq-item"><h3>هل يمكن معرفة العروض؟</h3><p>تواصل معنا لمعرفة العروض المتاحة.</p></div>
+ </div>
+</div>
+
+<!-- 12 التواصل -->
+<div id="contact" class="page">
+ <div class="page-hero"><h1>تواصل معنا</h1><p>نسعد بخدمتكم</p></div>
+ <div class="content">
+  <div class="cards">
+   <div class="card-content"><h3>📞 الهاتف</h3><p>0503721110</p><a class="btn" href="tel:0503721110">اتصل الآن</a></div>
+   <div class="card-content"><h3>💬 واتساب</h3><p>راسلنا مباشرة</p><a class="btn green" href="https://wa.me/966503721110">ابدأ المحادثة</a></div>
+   <div class="card-content"><h3>✉️ البريد الإلكتروني</h3><p>frestmart123@gmail.com</p><a class="btn" href="mailto:frestmart123@gmail.com">إرسال بريد</a></div>
+   <div class="card-content"><h3>📍 موقعنا</h3><p>فرست مارت – خط الكورنيش</p></div>
+  </div>
+ </div>
+</div>
+
+<footer>
+ <div class="footer-grid">
+  <div><h3>FIRST MART</h3><p>فرست مارت للمواد الغذائية والمنتجات الاستهلاكية.</p></div>
+  <div><h3>روابط سريعة</h3>
+   <p><a onclick="showPage('about')">من نحن</a></p>
+   <p><a onclick="showPage('categories')">أقسام المتجر</a></p>
+   <p><a onclick="showPage('offers')">العروض</a></p>
+  </div>
+  <div><h3>تواصل معنا</h3>
+   <p>الهاتف: 0503721110</p>
+   <p>frestmart123@gmail.com</p>
+   <p>خط الكورنيش</p>
+  </div>
+ </div>
+ <div class="copyright">© 2026 FIRST MART – جميع الحقوق محفوظة</div>
+</footer>
+
+<a class="float-whatsapp" href="https://wa.me/966503721110">☏ واتساب</a>
+
+<script>
+function showPage(id){
+ document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+ const page=document.getElementById(id);
+ if(page) page.classList.add('active');
+ window.scrollTo({top:0,behavior:'smooth'});
+ document.getElementById('nav').classList.remove('open');
+}
+function toggleMenu(){
+ document.getElementById('nav').classList.toggle('open');
+}
+</script>
+</body>
+</html>
